@@ -1,3 +1,4 @@
+import { Fragment } from "react"; 
 import { ProductList } from "./components/ProductList";
 import { ProductCard } from "./components/ProductCard";
 import './App.css';
@@ -11,6 +12,7 @@ function App() {
            "3x or 5x Telephoto camera",
            "Up to 29 hours video playback", 
         ],
+        stockCount: 10,
         price: 999,
     },
     {
@@ -21,8 +23,10 @@ function App() {
            "Dust, sweat, and water resistant",
            "Up to 6 hours of listening", 
         ],
+        stockCount: 0,
         price: 249,
-    },{
+    },
+    {
         imageSrc: "images/apple-watch.png",
         title: "Apple Watch 9",
         specification: [
@@ -30,6 +34,7 @@ function App() {
            "Always-On Retina display",
            "Up to 18 hours normal use", 
         ],
+        stockCount: 6,
         price: 399,
     }
   ];
@@ -50,16 +55,17 @@ function App() {
         ))}
       </ProductList>
 
-      <h2>Product which cost up to $500</h2>
-      <ul>
+      <h2>Product(s) which cost up to $500</h2>
         {products
           .filter(({ price }) => price < 500)
           .map(({ title, price }) => (
-            <li>
-              {title} cost ${price}
-            </li>
+            <Fragment key={title}>
+              <hr style={{ borderColor: "slategray"}} />
+              <p>
+                {title} cost ${price}
+              </p>
+            </Fragment>
           ))}
-      </ul>
     </div>
   );
 }
