@@ -3,8 +3,8 @@ const styles = {
         display: "flex", 
         gap: "16px", 
         marginBottom: "36px"         
-    }
-}
+    }, 
+};
 
 export function ProductList(props) {
     return (

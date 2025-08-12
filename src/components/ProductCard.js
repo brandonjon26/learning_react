@@ -17,15 +17,12 @@ const styles = {
   AvailableStatus: { 
     fontSize: "14px", 
     color: "lightgreen" 
-  }
-
-}
+  }, 
+};
 
 export function ProductCard({ product, background = "slategray", onPurchase }) {
   return (
-    <article 
-      style={{ ...styles.Container, background }}
-    >
+    <article style={{ ...styles.Container, background }}>
       <h2>{product.title}</h2>
       <img
         src={product.imageSrc}
@@ -59,5 +56,5 @@ function Status({ stockCount }) {
     <b><p style={styles.AvailableStatus}>{stockCount} left in stock</p></b>
   )
 
-  return stockCount == 0 ? notAvailableTemplate : availableTemplate;
+  return stockCount = 0 ? notAvailableTemplate : availableTemplate;
 }
