@@ -6,5 +6,5 @@ export function ProductList(props) {
             <h2>Products</h2>
             <div className={styles.List}>{props.children}</div>
         </>        
-    )
+    );
 }
